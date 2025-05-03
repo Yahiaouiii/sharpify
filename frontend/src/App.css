@@ -1,0 +1,108 @@
+/* 1. Ensure html, body and #root fill the viewport */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 2. Center the wrapper both vertically & horizontally */
+.PageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f9fb;
+}
+
+/* 3. The card itself */
+.App {
+  text-align: center;
+  padding: 2em;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Title */
+h1 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 1.5em;
+}
+
+/* Drag & drop / click upload area */
+.upload-area {
+  width: 80%;            /* base width relative to parent */
+  max-width: 300px;      /* never wider than 300px */
+  margin: 0 auto;        /* center it */
+  border: 2px dashed #888;
+  border-radius: 10px;
+  padding: 2em;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fafafa;
+  color: #666;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.upload-area:hover {
+  border-color: #333;
+  background-color: #f0f0f0;
+}
+
+/* Button with darker color */
+button {
+  margin-top: 1.5em;
+  padding: 0.7em 1.8em;
+  font-size: 1em;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover:not(:disabled) {
+  background-color: #000;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 6px solid #eee;
+  border-top: 6px solid #111;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 1em auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Upscaled image styling */
+.result-container {
+  margin-top: 2em;
+  text-align: center;
+}
+.result-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1em;
+}
+h2 {
+  color: #444;
+}
+
+.upload-area.selected {
+  background-color: #e6faff;  /* much lighter blue */
+  border-color: #000;          /* solid black border */
+}

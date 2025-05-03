@@ -1,0 +1,11 @@
+# requirements.txt
+Flask>=2.0,<3.0
+flask-cors>=3.0.10
+Pillow>=9.0
+pytest>=7.0
+opencv-python
+torch
+torchvision
+
+
+
